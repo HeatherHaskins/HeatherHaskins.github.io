@@ -1,0 +1,91 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container">
+
+  <h1>Enrollment</h1>
+<p>UNL Chancellor Harvey Perlman originally had set an enrollment goal of 30,000 students by 2017. In  </p>
+ 
+ 
+<div class="row">
+  
+
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                
+                  <th>College</th>
+                  <th>Fall 2013</th>
+                  <th>Fall 2012</th>
+                  <th>Fall 2011</th>
+                  <th>Fall 2010</th>
+                  <th>Fall 2009</th>
+                  <th>Fall 2008</th>
+                  <th>Fall 2007</th>
+                  <th>Fall 2006</th>
+                  <th>Fall 2005</th>
+                  <th>Fall 2004</th>
+                  <th>Fall 2003</th>
+                   <th>Change</th>
+                </tr>
+              </thead>
+              <tbody>
+              <p>This table shows the enrollment trends by college for the past ten years. While many colleges did not have large changes, there were some that had dramatic increases and decreases. CASNR increased by 72% in ten years, while the architecture college decreased by 30%. The average percent change in the colleges was 14.4% and the median was 14%. The modes were 7% and 14%.  </p>
+                {% for item in bycollege %}
+                <tr>
+                  <td>{{ item.College }}</td>
+                  <td>{{ item.Fall2013|int }}</td>
+                  <td>{{ item.Fall2012|int }}</td>
+                  <td>{{ item.Fall2011|int }}</td>
+                  <td>{{ item.Fall2010|int }}</td>
+                  <td>{{ item.Fall2009|int }}</td>
+                  <td>{{ item.Fall2008|int }}</td>
+                  <td>{{ item.Fall2007 |int}}</td>
+                  <td>{{ item.Fall2006|int }}</td>
+                  <td>{{ item.Fall2005 |int}}</td>
+                  <td>{{ item.Fall2004|int }}</td>
+                  <td>{{ item.Fall2003|int }}</td>
+                  <td>{{ "%.0f"|format(item.change) }}%</td>
+                </tr>
+               
+                {% endfor %}
+                </tbody>
+                </table>
+                </div>
+  
+  
+
+  
+<img src="Chart1.png" alt="" width="80%" >
+
+  <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                
+                  <th>Year</th>
+                  
+                  <th>Students</th>
+                 
+                </tr>
+              </thead>
+              <tbody>
+
+                {% for row in enrollment %}
+                <tr>
+                  <td> {{ row.Year|int }}</td>
+                  <td> {{ row.Students|int }}</td>
+                  
+                </tr>
+               
+                {% endfor %}
+                </tbody>
+                </table>
+                </div>
+
+   
+</div>
+{% endblock content %}
+
