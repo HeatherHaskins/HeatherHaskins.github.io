@@ -3,8 +3,9 @@
 {% block content %}
 <div class="container">
 
-  <h1>Enrollment</h1>
-<p>UNL Chancellor Harvey Perlman originally had set an enrollment goal of 30,000 students by 2017. In  </p>
+  <h1>UNL Enrollment Trends</h1>
+<p>UNL Chancellor Harvey Perlman originally had set an enrollment goal of 30,000 students by 2017. In a message to UNL students, faculty and staff on Nov. 7, Perlman said that he had underestimated the accommodations needed to handle so many students and extended the time frame of his goal to 2020. ""Rather than make the compromises we might have to make to achieve 30,000 in the time specified, I am suggesting that we extend the timeline of our goal until sometime around 2020," Perlman was quoted as saying in a UNL press release.
+This chart shows gains and losses in individual colleges. CASNR has been steadily growing while the College of Architecture has been shrinking.    </p>
  
  
 <div class="row">
@@ -57,7 +58,7 @@
   
   
 
-  
+  <p> This chart shows enrollment from 1967-2013.</p>
 <img src="Chart1.png" alt="" width="100%" >
 
   <div class="table-responsive">
