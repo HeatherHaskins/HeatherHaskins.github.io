@@ -1,0 +1,115 @@
+
+{% extends "_base.html" %}
+
+{% block content %}
+<div class="container">
+  <h1>Nebraska Humane Society Pet Finder</h1>
+
+ 
+<div class="row">
+  <div class="col-md-6">
+    <h3>Info about PetFinder</h3>
+    <p>This app would be a way for users who were looking for a specific kind of animal to find 
+    pets available at the Nebraska Humane Society that match that description. The user would fill out a drop down menu with
+    a basic description of what they were looking for. They could choose between dogs and cats, the sex of the animal and the breed of the animal. 
+    They could also choose a basic age range.</p>
+    <p> Once that information is entered, the computer would 
+    come up with animals that match that description, or are the most similar to that description. So, for example, if I'm looking for a male German Shepard, the app would give me the information
+    for Kuno, Twix and Ollie. These records would also show up when you search for a female German Shepard because they are similar. A  window would pop up that says something like "no records match your search, but here are similar results." </p>
+    <p> The data base 
+    of animals would look like these charts and would be scraped live from the Nebraska Humane Society
+    Website.    </p>
+    </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+   
+   
+    </div>
+</div>
+
+<h2>Dogs</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                
+                  <th>Name</th>
+                  <th>Breed</th>
+                  <th>Age</th>
+                  <th>Color</th>
+                  <th>Sex</th>
+                  <th>Weight</th>
+                  <th>First Day at NEHS</th>
+                  <th>Adoption Fee</th>
+                  <th>Exercise Needs</th>
+                  <th>Ease of Training</th>
+                  <th>Friendliness</th>
+                  <th>Playfulness</th>
+                    <th>Dog Skills</th>
+                     <th>Leash Manners</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+                {% for item in dogs %}
+                <tr>
+                  <td><img src="dogs/{{ item.Name|capitalize }}.jpg" width="75%"/> {{ item.Name }}</td>
+                  <td>{{ item.Breed}}</td>
+                  <td>{{ item.Age }}</td>
+                  <td>{{ item.Color}}</td>
+                  <td>{{ item.Sex }}</td>
+                  <td>{{ item.weight}}</td>
+                  <td>{{ item.FirstDay }}</td>
+                  <td>{{ item.AdoptionFee }}</td>
+                  <td>{{ item.ExerciseNeeds}}</td>
+                  <td>{{ item.EaseofTraining }}</td>
+                  <td>{{ item.Friendliness}}</td>
+                  <td>{{ item.Playfulness }}</td>
+                  <td>{{ item.DogSkills }}</td>
+                  <td>{{ item.LeashManners }}</td>
+                </tr>
+               
+                {% endfor %}
+                </tbody>
+                </table>
+                </div>
+   <h2>Cats </h2>
+ <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                
+                  <th>Name</th>
+                  <th>Breed</th>
+                  <th>Age</th>
+                  <th>Color</th>
+                  <th>Sex</th>
+                  <th>Weight</th>
+                  <th>First Day at NEHS</th>
+                  <th>Adoption Fee</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+              
+                {% for item in cats %}
+                <tr>
+                  <td><img src="cats/{{ item.Name|capitalize }}.jpg" width="35%"/> {{ item.Name }}</td>
+                  <td>{{ item.Breed}}</td>
+                  <td>{{ item.Age }}</td>
+                  <td>{{ item.Color}}</td>
+                  <td>{{ item.Sex }}</td>
+                  <td>{{ item.Weight}}</td>
+                  <td>{{ item.FirstDay }}</td>
+                  <td>{{ item.AdoptionFee }}</td>
+                  
+                </tr>
+               
+                {% endfor %}
+                </tbody>
+                </table>
+                </div>
+  </div>
+{% endblock content %}
+
